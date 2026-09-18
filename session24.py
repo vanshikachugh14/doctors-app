@@ -97,7 +97,7 @@ class MongoDBHelper:
     # 1. Create Connection with MongoDB Atlas in Cloud
     def __init__(self):
         # Create a new client and connect to the server
-        self.client = MongoClient(os.environ.get("mongodb+srv://vanshika:shubhamchugh@cluster0.spwq1st.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"))
+        self.client = MongoClient(os.environ.get("MONGO_URI"))
         print('[MongoDBHelper] Connection Created')
 
     # 2. Select the Database and the collection, in which you want to work
