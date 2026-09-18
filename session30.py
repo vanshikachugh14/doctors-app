@@ -5,6 +5,7 @@ from session29A import Consultation
 from session24 import MongoDBHelper
 import hashlib
 from bson.objectid import ObjectId
+import os
 
 web_app = Flask('Doctors App')
 db = MongoDBHelper()
@@ -341,7 +342,7 @@ def update_patient_in_db():
 def main():
     # Secret Key, we have to create manually of our choice
     # It is required for Session Management
-    web_app.secret_key = 'doctors-app-key-v1'
+    web_app.secret_key = os.environ.get("SECRET_KEY")
     # web_app.run()
     web_app.run(port=5001)
 
