@@ -13,7 +13,6 @@ db = MongoDBHelper()
 db.select_db(db_name='gw2025', collection='users')
 
 # View
-# HW:Validation of the Form: 
 # https://www.w3schools.com/bootstrap5/bootstrap_form_validation.php
 @web_app.route('/')
 def index():
