@@ -36,7 +36,7 @@ def home():
 @web_app.route('/add-patient')
 def add_patient():
     if len(session['user_id']) > 0:
-        return render_template('add-patient.html', name=session['name'], email=session['email'])
+        return render_template('add-patients.html', name=session['name'], email=session['email'])
     else:
         return redirect('/')
 
