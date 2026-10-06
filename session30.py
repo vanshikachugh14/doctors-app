@@ -8,6 +8,7 @@ from bson.objectid import ObjectId
 import os
 
 web_app = Flask('Doctors App')
+web_app.secret_key = os.environ.get("SECRET_KEY")
 db = MongoDBHelper()
 db.select_db(db_name='gw2025', collection='users')
 
@@ -342,7 +343,6 @@ def update_patient_in_db():
 def main():
     # Secret Key, we have to create manually of our choice
     # It is required for Session Management
-    web_app.secret_key = os.environ.get("SECRET_KEY")
     # web_app.run()
     web_app.run(port=5001)
 
